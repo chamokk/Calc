@@ -8,9 +8,12 @@ class App extends Component {
 
 render() {
   return (
-    <Container className='container'> 
+    <Container className='container' > 
       <Grid centered>
-        <Segment >
+        <Segment>
+          <GridRow fluid color='black'>
+            <Segment size='big' color='black' inverted textAlign='right'>1</Segment>
+          </GridRow>
           <Grid.Row centered>
              <Button size='big'>7</Button>
              <Button size='big'>8</Button>
