@@ -28,7 +28,31 @@ class App extends Component {
   };
 
   equalOp = () => {
+
     this.setState({currentVal: this.state.input});
+    this.setState({input: ""});
+
+    switch (this.state.operator) {
+      case "+":
+        this.setState({input: parseFloat(this.state.previusVal) +
+         parseFloat(this.state.currentVal)});
+         break;
+
+      case "-": 
+        this.setState({input: parseFloat(this.state.previusVal) -
+          parseFloat(this.state.currentVal)});
+          break;
+
+      case "*":
+        this.setState({input: parseFloat(this.state.previusVal) *
+          parseFloat(this.state.currentVal)});
+          break;
+
+      case "/":
+        this.setState({input: parseFloat(this.state.previusVal) /
+          parseFloat(this.state.currentVal)});
+          break;
+    }
 
     
   }
@@ -64,8 +88,8 @@ render() {
           <Grid.Row centered>
              <Button size='big' onClick={()=>this.addToInput('.')}>.</Button>
              <Button size='big' onClick={()=>this.addToInput(0)}>0</Button>
-             <Button size='big'>=</Button>
-             <Button size='big'onClick={()=>this.addOperator('-')}>-</Button>
+             <Button size='big' onClick={()=>this.equalOp}>=</Button>
+             <Button size='big' onClick={()=>this.addOperator('-')}>-</Button>
           </Grid.Row>
           <GridRow>
             <Button fluid size='big'onClick={()=>this.setState({input: ""})}>Clear</Button>
